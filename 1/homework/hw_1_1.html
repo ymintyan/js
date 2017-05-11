@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta charset="utf-8">
+<title></title> 
+<script>
+	/*###Задача 1. Создайте функцию find(arr, value), которая ищет в массиве arr значение value и возвращает его номер, если найдено, или -1, если не найдено.*/
+
+	function find(arr, value){
+		return arr.indexOf(value);
+	}
+	var arr = [1, 90, 789, 56, 45, 34, 678, 78, -90, -6, 5, 3, 6];
+
+	document.write("arr: " + arr + "<br/>");
+
+	document.write("455 on position: " + find(arr,455) +"<br/>");
+	document.write("34 on position: " + find(arr,34) +"<br/>");
+	document.write("1 on position: " + find(arr,1) +"<br/>");
+	document.write("6 on position: " + find(arr,6) +"<br/>");    
+        
+</script>
+</head> 
+	
+<body> 
+
+</body>
+</html>

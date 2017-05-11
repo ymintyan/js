@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta charset="utf-8">
+<title></title> 
+<script>
+	/*###Задача 3. Дан массив чисел: [1,2,31,24,-67,5,3,555,79,-4,21,33,89,-90].
+
+	Найдите максимальное и минимальное значение массива.
+	Все положительные и четные числа запишите в другой массив. Результаты выведите на экран.*/
+
+	var arr = [1,2,31,24,-67,5,3,555,79,-4,21,33,89,-90];
+
+	function getMax(arr) {
+	  return Math.max.apply(null, arr);
+	}
+
+	function getMin(arr) {
+	  return Math.min.apply(null, arr);
+	}
+	var max = getMax(arr);
+	document.write("max: " + max + "<br/>");
+
+	var min = getMin(arr);
+	document.write("min: " + min + "<br/>");
+
+	var posAndEven = [];
+	for(var i = 0; i < arr.length; i++){
+		if(arr[i] > 0 && arr[i] % 2 == 0) posAndEven.push(arr[i]);
+	}
+
+	document.write("четные и положительные числа: " + posAndEven + "<br/>");
+        
+        
+</script>
+</head> 
+	
+<body> 
+
+</body>
+</html>
