@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta charset="utf-8">
+<title></title> 
+<script>
+	
+        /*#Class Work
+
+		Задача 1
+
+		Напишите функцию printNumber, которая последовательно выводит в консоль числа от 1 до 20, с интервалом между числами 100мс. То есть, весь вывод должен занимать 2000мс, в течение которых каждые 100мс в консоли появляется очередное число.*/
+
+
+		function printNumber(){
+		  var i = 1;
+			var timerId = setInterval(function(){
+		  	console.log(i);
+		    if(i == 20) clearInterval(timerId);
+		    i++;
+		  },1000);
+		}
+
+		printNumber();
+        
+</script>
+</head> 
+	
+<body> 
+
+</body>
+</html>

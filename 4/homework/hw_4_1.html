@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta charset="utf-8">
+<title></title> 
+<script>
+	// #Homework
+
+	// ###Задача 1
+
+	// Представьте, что в JavaScript нет метода call, есть только метод apply. Используя apply, напишите метод call.
+        
+        
+
+        function call(f,context){
+			var arr = [];
+			for(var i = 2; i < arguments.length; i++){
+		  	arr.push(arguments[i]);
+		  }
+		  f.apply(context, arr);
+		}
+
+
+		function f(city){
+		  this.city = city;
+			alert(this.name + " from " + this.city);
+		}
+
+		var u = {name: "zhenya"};
+		var r = {name: "taras"};
+
+		call(f, u, "kiev");
+		call(f, r, "london");
+</script>
+</head> 
+	
+<body> 
+
+</body>
+</html>

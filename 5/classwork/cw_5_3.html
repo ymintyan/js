@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta charset="utf-8">
+<title></title> 
+<script>
+	
+        /*Задача 3
+
+		Напишите функцию, которая принимает один аргумент и возвращает его тип данных. Выполните обработку исключений в случае передачи двух и больше аргументов.*/
+
+		function getType(arg){
+			try{
+			  if(arguments.length > 1) throw new Error("custom error, must be 1 arg");
+			  return typeof arg;
+			} catch(e){
+				alert(e.name + " : " + e.message);
+			}
+	    }
+        
+
+        document.write("<br/>" + getType(32,32) + "<br/>");
+		document.write(getType(null) + "<br/>");
+		document.write(getType({}) + "<br/>");
+		document.write(getType(true) + "<br/>");
+</script>
+</head> 
+	
+<body> 
+
+</body>
+</html>
