@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta charset="utf-8">
+<title></title> 
+<style>
+div{margin:20px}
+button{width:40px;cursor:pointer;font-size:20px}
+input{width:100px}
+</style>
+<script>
+	window.onload = function(){
+		/*add.onclick = function(){
+		res.value = +a.value + +b.value;
+	}
+
+	sub.onclick = function(){
+		res.value = a.value - b.value;
+	}
+
+	mul.onclick = function(){
+		res.value = a.value * b.value;
+	}
+
+	div.onclick = function(){
+	  if(a.value == "" && b.value == ""){
+	  	res.value = '';
+	  } else{
+	  res.value = a.value / b.value;}
+	}*/
+
+
+	function adder(){
+		res.value = +a.value + +b.value;
+		result.innerHTML= a.value + " + " + b.value;
+	}
+
+	function subtract(){
+		res.value = a.value - b.value;
+		result.innerHTML= a.value + " - " + b.value;
+	}
+
+	function multiple(){
+		res.value = a.value * b.value;
+		result.innerHTML= a.value + " * " + b.value;
+	}
+
+	function division(){
+		if(a.value == "" && b.value == ""){
+	  	res.value = '';
+	  } else{
+	  res.value = a.value / b.value;
+	  result.innerHTML= a.value + " / " + b.value;}
+	}
+
+
+
+	add.addEventListener("click",adder);
+	sub.addEventListener("click",subtract);
+	mul.addEventListener("click",multiple);
+	div.addEventListener("click",division);
+
+};
+	
+        
+</script>
+</head> 
+	
+<body> 
+		<p>enter 2 numbers:</p>
+		<input type="text" id="a">
+		<input type="text" id="b">
+		<div>
+		  <button id="add">+</button>
+		  <button id="sub">-</button>
+		  <button id="mul">*</button>
+		  <button id="div">/</button>
+		</div>
+		<p id="result"></p>
+		<input type="text" id="res">
+		        
+</body>
+</html>

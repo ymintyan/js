@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta charset="utf-8">
+<title></title> 
+<style>div{width:50px;margin:20px;padding:20px;border:1px solid;position:absolute}</style>
+<script>
+	
+        /*Создайте страницу с 3 элементами div. Напишите сценарий, который будет произвольно менять положение этиъ элементов на странице каждую секунду.*/
+
+        setInterval(function(){
+		  div1.style.top = Math.random() * 500 +"px";
+		  div1.style.left = Math.random() * 500 +"px";
+		  div2.style.top = Math.random() * 500 +"px";
+		  div2.style.left = Math.random() * 500 +"px";
+		  div3.style.top = Math.random() * 500 +"px";
+		  div3.style.left = Math.random() * 500 +"px";
+		  
+		},1000);
+        
+</script>
+</head> 
+	
+<body> 
+		<div id='div1'>div1</div>
+		<div id='div2'>div2</div>
+		<div id='div3'>div3</div>
+</body>
+</html>

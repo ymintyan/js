@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta charset="utf-8">
+<title></title> 
+<style>a{display: inline-block;width:70px;border:1px solid;margin:50px;text-align: center;}
+div{width:40px;border:1px solid;text-align: center;}</style>
+<script>
+	
+        /*Создайте функцию positionAt(anchor, position, elem), которая позиционирует элемент elem, в зависимости от значения аргумента position: сверху ("top"), справа ("right") или снизу ("bottom"). Функция должна проводить позиционирование относительно элемента anchor. Для решения данной задачи Вам понадобится создать элемент anchor (тег а) и elem (тег div).
+
+*/      
+window.onload = function(){
+
+        function positionAt(anchor,position,elem){
+			elem.style.position = "absolute";
+		  switch(position){
+		  	case "top":
+		    elem.style.top = anchor.getBoundingClientRect().top - 30 + "px";
+		    elem.style.left = anchor.getBoundingClientRect().left + "px";
+		    break;
+		    case "bottom":
+		    elem.style.top = anchor.getBoundingClientRect().top + 30 + "px";
+		    elem.style.left = anchor.getBoundingClientRect().left + "px";
+		    break;
+		    case "right":
+		    elem.style.top = anchor.getBoundingClientRect().top + "px";
+		    elem.style.left = anchor.getBoundingClientRect().right + 10 + "px";
+		    break;
+		  }
+		}
+
+
+		var anchor = document.getElementsByTagName("a")[0];
+		var elem = document.getElementsByTagName("div")[0];
+
+		setTimeout(function(){positionAt(anchor,"top",elem)},1000);
+		setTimeout(function(){positionAt(anchor,"right",elem)},2000);
+		setTimeout(function(){positionAt(anchor,"bottom",elem)},3000);
+};
+</script>
+</head> 
+	
+<body> 
+		<a>a</a>
+		<div>div</div>
+</body>
+</html>

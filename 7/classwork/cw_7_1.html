@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta charset="utf-8">
+<title></title> 
+<style>
+	div{
+		margin:30px;padding:20px;border:1px solid;
+		position:relative;top:10px}
+</style>
+<script>
+	/*
+		Создайте страницу. Разместите на ней произвольное количеством элементов. Разработайте сценарий, который будет по очереди перемещать span с текстом и интервалом в 400мс:
+
+		Перед элементом.
+		Внутри элемента перед тектом
+		Внетри элемента после текста.
+		После элемента.
+	*/
+		var span = document.createElement("span");
+		span.innerHTML = " " + "span" + " ";
+
+
+		function a (){
+		  setTimeout(function(){
+		    div.parentElement.insertBefore(span,div);
+		    }, 400);
+		    
+		   setTimeout(function(){ 
+		    div.insertBefore(span,div.firstChild);
+		    }, 800);
+		    
+		   setTimeout(function(){
+		    div.appendChild(span);
+		   }, 1200);
+		   
+		   setTimeout(function(){
+		    div.parentElement.insertBefore(span,div.nextElementSibling);
+		   }, 1600);
+
+		}
+
+
+		var timer = setInterval(a, 1600);
+		setTimeout(function(){clearInterval(timer)}, 10000);
+
+		        
+</script>
+</head> 
+	
+<body> 
+	  <div id='div'>div</div>
+</body>
+</html>

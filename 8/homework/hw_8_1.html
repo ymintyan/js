@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta charset="utf-8">
+<title></title> 
+<style>	
+label,input{margin:10px}
+</style>
+<script>
+	
+        
+/*Задача 1.
+
+Создайте регистрационную форму: логин, пароль, телефон и кнопка "Отправить". По нажатию на кнопку "Отправить", проверьте корректность ввода данных с помощью JavaScript.
+
+Логин - не должен содержать цифры.
+Пароль - не дожен содержать знак $.
+Телефон - должен содержать только цифры.
+Закрасьте фон поля ввода в красный цвет, если были введены неправильные данные.
+
+Используйте для решение данной задачи методы для работы со строками или регулярные выражения:*/
+
+window.onload = function(){
+
+	
+	
+    
+	var reg_login = /\d/;
+	var reg_pass = /\$/;
+	var reg_tel = /\D/;
+
+
+	submit.onclick = function(){
+		var log = login.value;
+		var pass = password.value;
+		var tel_number = tel.value;
+
+		var for_pass = document.body.querySelector('[for="password"]');
+		var for_log = document.body.querySelector('[for="login"]');
+		var for_tel = document.body.querySelector('[for="tel"]');
+			
+			if(reg_login.test(log)) {
+		  	login.style.backgroundColor = "red";
+		  	for_log.style.color = "red";
+		    for_log.innerHTML = "ERROR: number in pass";
+		  	} else {
+		  		login.style.backgroundColor = "";
+		  		for_log.style.color = "";
+		  		for_log.innerHTML = "login";
+		  	}
+		  	
+		  	if(reg_pass.test(pass)) {
+		  	password.style.backgroundColor = "red";
+		  	for_pass.style.color = "red";
+		    for_pass.innerHTML = "ERROR: $ in pass";
+		  	} else {
+		  		password.style.backgroundColor = "";
+		  		for_pass.style.color = "";
+		  		for_pass.innerHTML = "password";
+		  	}
+
+		  	if(reg_tel.test(tel_number)) {
+		  	tel.style.backgroundColor = "red";
+		  	for_tel.style.color = "red";
+		    for_tel.innerHTML = "ERROR: not number in tel";
+		  	} else {
+		  		tel.style.backgroundColor = "";
+		  		for_tel.style.color = "";
+		  		for_tel.innerHTML = "tel";
+		  	}
+	  
+		};
+}
+
+</script>
+</head> 
+<body> 
+  <input type="text" id="login"><label for="login">login</label><br>
+  <input type="password" id="password"><label for="password">password</label><br>
+  <input type="text" id="tel"><label for="tel">tel</label><br>
+  <button id="submit">send</button>
+</body>
+</html>
