@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Загрузка скриптов, картинок, фреймов: onload и onerror </title>
+    <style>
+        div{width:50px;height: 50px;background: red;position: absolute;}
+    </style>
+    <!--
+
+    Задача 3.
+
+Создайте страницу с двумя полями ввода, кнопкой и элементом div с шириной и высотой 50px. Создайте сценарий, который по нажатию на кнопку будет перемещать div в координаты, указанные в полях ввода. В случае, если при нажатии кнопки хотя бы одно из полей ввода не заполнено, пользователь должен получить предупреждение, а событие click должно быть отменено.
+
+    -->
+
+    <script>
+        window.onload = function () {
+
+           div.style.position="absolute";
+           
+            button.onclick = function(){
+                       var top_move = document.querySelector("#top").value;
+                       var left_move = document.querySelector("#left").value;
+                       if(top_move == '' || left_move == '') {
+                            alert("must be two coords");
+                            e.preventDefault();
+                       }
+                       div.style.top = top_move + "px";
+                       div.style.left = left_move + "px";
+                       div.style.color="blue";
+                       
+                   };
+        };
+    </script>
+</head>
+<body>
+<button id="button">move to</button><br>
+    top<input type="text" id="top">
+    left<input type="text" id="left">
+    <div id="div"></div>
+
+</body>
+</html>

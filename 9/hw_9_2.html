@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Загрузка скриптов, картинок, фреймов: onload и onerror </title>
+    <style>
+        div{width:100px;height: 100px;background: red;position: relative;border-radius: 50%;text-align: center;}span{position: absolute;top:35%;left:27%;}
+    </style>
+    <!--
+
+    Создайте круг красного цвета с надписью "Скидка". Когда курсор пользователя будет приближаться к ней, "Скидка" должна от него "убегать", не давая пользователю нажать на красный круг. Если круг будет выйдет за одну из сторон экрана, то он должен, появится с противоположной стороны.
+
+    -->
+
+    <script>
+        window.onload = function () {
+
+           var top = 0;
+           var left = 0;
+           div.onmouseover = function(){
+                top+= Math.random()*(200 - 50) + 50;
+                left+= Math.random()*(150 - 50) + 50;
+                if(left > document.documentElement.clientWidth) left = 20;
+                if(top > document.documentElement.clientHeight) top = 20;
+                this.style.top = top + 'px';
+                this.style.left = left + 'px';
+           };           
+
+        };
+    </script>
+</head>
+<body>
+
+    
+    <div id="div"><span id="span">скидка</span></div>
+
+</body>
+</html>

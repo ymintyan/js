@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Загрузка скриптов, картинок, фреймов: onload и onerror </title>
+    
+    <!--
+
+    Создайте кнопку навигации, которая помогает при прокрутке страницы. Работать должна следующим образом:
+
+Пока страница промотана меньше чем на высоту экрана вниз – кнопка не видна.
+При промотке страницы вниз больше, чем на высоту экрана, появляется кнопка «стрелка вверх».
+При нажатии на нее страница прыгает вверх, но не только. Дополнительно, кнопка меняется на «стрелка вниз» и при клике возвратит на старое место. Если же в этом состоянии посетитель сам прокрутит вниз больше, чем один экран, то она вновь изменится на «стрелка вверх». Должен получиться удобный навигационный помощник.
+
+    -->
+    <style>
+    body{height: 2000px}
+    button{background: rgba(155,155,155,.5);border-radius: 20px;padding:10px;cursor: pointer;}
+    </style>
+    <script>
+        window.onload = function () {
+
+            
+            var button = document.createElement("button");
+            var txt = document.createTextNode("наверх");
+            button.appendChild(txt);
+            document.body.appendChild(button);
+            button.style.visibility = "hidden";
+            button.style.position = "fixed";
+            button.style.top = "50px";
+            button.style.left = "50px";
+
+            var scrollY = 0;
+            if(window.pageYOffset < document.documentElement.clientHeight) button.innerHTML = "вниз";
+
+            window.onscroll = function(){
+
+                if(window.pageYOffset > document.documentElement.clientHeight){
+                    button.style.visibility = "visible";
+                    button.innerHTML = "наверх";
+                scrollY = window.pageYOffset;}
+            };
+
+            button.onclick = function(){
+                
+                        if(button.innerHTML == "наверх"){ window.scrollTo(0,0);
+                        button.innerHTML = "вниз";} 
+                         else if(button.innerHTML == "вниз"){
+                            var t = scrollY;
+                    window.scrollTo(0, t);
+                    button.innerHTML = "наверх";}
+                        };
+
+        };
+    </script>
+</head>
+<body>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, provident!</p>
+</body>
+</html>

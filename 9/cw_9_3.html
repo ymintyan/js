@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Загрузка скриптов, картинок, фреймов: onload и onerror </title>
+    <!--
+
+    Создайте поле ввода. При помощи событий клавиатуры сделайте так, чтобы в поле можно было вводить только цифры.а.
+
+    -->
+    <script>
+        window.onload = function () {
+
+            f.onkeypress = function(e){
+                if(e.keyCode <= 48 && e.keyCode >= 57) return false;
+            };
+
+
+        };
+    </script>
+</head>
+<body>
+<input type="text" id="f">
+</body>
+</html>

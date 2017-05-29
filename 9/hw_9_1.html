@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Загрузка скриптов, картинок, фреймов: onload и onerror </title>
+    <style>
+        
+    </style>
+    <!--
+
+    Сделайте список, элементы которого можно выделять кликом. Используйте для решения данной задачи свойство e.target.
+
+    -->
+
+    <script>
+        window.onload = function () {
+            list.onclick = function(e){
+                var li = document.getElementsByTagName("li");
+                for (var i = 0; i < li.length; i++) {
+                    li[i].style.backgroundColor = "";
+                }
+                e.target.style.backgroundColor = "red";
+
+            };
+          
+        };
+    </script>
+</head>
+<body>
+<ul id = 'list'>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nesciunt? </li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nesciunt?</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nesciunt?</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nesciunt?</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nesciunt?</li>
+</ul>
+</body>
+</html>
