@@ -31,14 +31,17 @@
             button.style.left = "50px";
 
             var scrollY = 0;
-            if(window.pageYOffset < document.documentElement.clientHeight) button.innerHTML = "вниз";
+            if(window.scrollTop < document.documentElement.clientHeight) button.innerHTML = "вниз";
 
             window.onscroll = function(){
 
                 if(window.pageYOffset > document.documentElement.clientHeight){
                     button.style.visibility = "visible";
                     button.innerHTML = "наверх";
-                scrollY = window.pageYOffset;}
+                	scrollY = window.pageYOffset;
+            	} else{
+            		button.innerHTML = "вниз";
+            	}
             };
 
             button.onclick = function(){
